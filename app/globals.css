@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Tipografías */
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-jost);
+
+  /* Marrón chocolate */
+  --color-chocolate: #4a3022;
+  --color-chocolate-dark: #3a2418;
+  --color-chocolate-deep: #2e1a0f;
+  --color-chocolate-ink: #21130a;
+
+  /* Crema */
+  --color-cream: #f5efe4;
+  --color-cream-soft: #efe7d6;
+  --color-cream-bright: #fbf7ee;
+
+  /* Rosa empolvado */
+  --color-rose: #f0d8cf;
+  --color-rose-soft: #f5e3dc;
+
+  /* Terracota */
+  --color-terracotta: #c97d60;
+  --color-terracotta-dark: #a85e42;
+
+  /* Dorado cálido */
+  --color-gold: #d4af37;
+  --color-gold-soft: #dcc06a;
+  --color-gold-bright: #e2c25e;
+
+  /* Texto neutro */
+  --color-mocha: #6b5240;
+  --color-sand: #d8ccb8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f5efe4;
+    --foreground: #4a3022;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-chocolate-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Contenedor de página */
+.wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 78rem;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Animación de aparición al hacer scroll (controlada por JS con .js) */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
