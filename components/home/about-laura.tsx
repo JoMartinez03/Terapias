@@ -5,7 +5,7 @@ import { SectionLabel } from "@/components/ui/section-heading";
 
 export function AboutLaura() {
   return (
-    <section id="sobre-laura" className="bg-cream">
+    <section id="sobre-laura" className="bg-almond">
       <div className="wrap grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:py-28">
         <Reveal>
           <div className="mx-auto max-w-sm lg:mx-0">
@@ -19,14 +19,14 @@ export function AboutLaura() {
 
         <div className="max-w-2xl">
           <Reveal>
-            <SectionLabel>Sobre mí</SectionLabel>
+            <SectionLabel className="text-chocolate/70">Sobre mí</SectionLabel>
           </Reveal>
 
           <Reveal delay={80}>
             <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
               Hola,
               <br />
-              soy <em className="text-terracotta-dark">Laura</em>
+              soy <em className="text-chocolate">Laura</em>
             </h2>
           </Reveal>
 
@@ -43,7 +43,7 @@ export function AboutLaura() {
           </Reveal>
 
           <Reveal delay={220}>
-            <blockquote className="mt-8 border-l-2 border-terracotta pl-6">
+            <blockquote className="mt-8 border-l-2 border-sage pl-6">
               <p className="font-serif text-2xl italic leading-snug text-chocolate md:text-3xl">
                 Mi enfoque no va al síntoma. Va a la raíz.
               </p>

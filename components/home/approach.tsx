@@ -27,17 +27,17 @@ const values: ApproachValue[] = [
 
 export function Approach() {
   return (
-    <section id="sobre-mi" className="bg-cream">
+    <section id="sobre-mi" className="bg-almond">
       <div className="wrap grid items-start gap-14 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 lg:py-28">
         <div className="max-w-2xl">
           <Reveal>
-            <SectionLabel>Por qué yo</SectionLabel>
+            <SectionLabel className="text-chocolate/70">Por qué yo</SectionLabel>
           </Reveal>
 
           <Reveal delay={80}>
             <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
               Mi enfoque es diferente{" "}
-              <em className="text-terracotta-dark">
+              <em className="text-chocolate">
                 porque parte de mi propia historia
               </em>
             </h2>
@@ -60,7 +60,7 @@ export function Approach() {
           </Reveal>
 
           <Reveal delay={220}>
-            <blockquote className="mt-9 border-l-2 border-terracotta pl-6">
+            <blockquote className="mt-9 border-l-2 border-sage pl-6">
               <p className="font-serif text-2xl italic leading-snug text-chocolate md:text-3xl">
                 El cuerpo no es tu enemigo. Es tu guía. Y yo te ayudo a
                 escucharlo.
@@ -83,14 +83,14 @@ export function Approach() {
               return (
                 <li
                   key={value.label}
-                  className="flex flex-col gap-3 rounded-2xl border border-cream-soft bg-cream-bright p-6 transition-all duration-300 hover:-translate-y-1 hover:border-terracotta/30 hover:shadow-md"
+                  className="flex flex-col gap-3 rounded-2xl border border-sage/40 bg-mist p-6 transition-all duration-300 hover:-translate-y-1 hover:border-chocolate/25 hover:shadow-md"
                 >
-                  <Icon size={26} className="text-terracotta-dark" />
+                  <Icon size={26} className="text-chocolate/70" />
                   <div>
                     <p className="font-serif text-xl text-chocolate">
                       {value.label}
                     </p>
-                    <p className="mt-1 text-sm leading-relaxed text-mocha">
+                    <p className="mt-1 text-sm leading-relaxed text-chocolate/70">
                       {value.note}
                     </p>
                   </div>

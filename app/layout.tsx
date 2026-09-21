@@ -59,6 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es"
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
       className={`${cormorant.variable} ${jost.variable}`}
     >
       <head>

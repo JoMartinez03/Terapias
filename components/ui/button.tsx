@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "gold" | "outline" | "dark" | "linkGold";
+type Variant = "gold" | "outline" | "dark" | "linkGold" | "outlineLight";
 
 interface ButtonProps {
   children: ReactNode;
@@ -28,6 +28,8 @@ const variants: Record<Variant, string> = {
   gold: "bg-gold text-chocolate-ink hover:bg-gold-bright hover:shadow-lg",
   outline:
     "border border-cream/40 text-cream hover:border-gold hover:text-gold",
+  outlineLight:
+    "border border-chocolate/30 text-chocolate hover:border-chocolate hover:bg-chocolate hover:text-cream",
   dark: "bg-chocolate text-cream hover:bg-chocolate-dark",
   linkGold: "text-gold hover:text-gold-bright underline-offset-4 hover:underline",
 };

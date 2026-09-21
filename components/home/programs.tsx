@@ -6,18 +6,20 @@ import { programs, programHref } from "@/data/programs";
 
 export function Programs() {
   return (
-    <section id="programas" className="bg-chocolate text-cream">
+    <section id="programas" className="bg-mist text-chocolate">
       <div className="wrap py-16 md:py-24 lg:py-28">
         <Reveal>
           <div className="max-w-2xl">
-            <SectionLabel tone="dark">Programas digitales</SectionLabel>
-            <SectionTitle className="mt-6 text-cream">
+            <SectionLabel className="text-chocolate/70">Programas digitales</SectionLabel>
+            <SectionTitle className="mt-6 text-chocolate">
               Empezá tu proceso
               <br />
               desde{" "}
-              <em className="text-gold">donde estés</em>
+              <em className="text-chocolate underline decoration-sage decoration-2 underline-offset-8">
+                donde estés
+              </em>
             </SectionTitle>
-            <p className="mt-5 text-lg leading-relaxed text-sand">
+            <p className="mt-5 text-lg leading-relaxed text-chocolate/70">
               Recursos y programas digitales para quienes quieren ir más
               profundo.
             </p>
@@ -31,41 +33,41 @@ export function Programs() {
                 className={cn(
                   "flex h-full flex-col rounded-2xl border p-7 transition-all duration-300",
                   program.featured
-                    ? "border-gold/60 bg-chocolate-dark shadow-xl"
-                    : "border-white/10 bg-white/5 hover:-translate-y-1 hover:border-gold/30 hover:bg-white/10",
+                    ? "border-frost/60 bg-blush shadow-xl"
+                    : "border-sage/40 bg-almond hover:-translate-y-1 hover:border-chocolate/25",
                 )}
               >
                 {program.featured && (
-                  <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-gold/50 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-gold">
+                  <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-chocolate/30 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-chocolate">
                     Destacado
                   </p>
                 )}
                 <p
                   className={cn(
                     "text-xs font-medium uppercase tracking-[0.25em]",
-                    program.featured ? "text-gold" : "text-sand",
+                    program.featured ? "text-chocolate/70" : "text-chocolate/60",
                   )}
                 >
                   {program.kind}
                 </p>
-                <h3 className="mt-3 font-serif text-2xl font-medium text-cream md:text-3xl">
+                <h3 className="mt-3 font-serif text-2xl font-medium text-chocolate md:text-3xl">
                   {program.title}
                 </h3>
-                <p className="mt-3 flex-1 leading-relaxed text-sand">
+                <p className="mt-3 flex-1 leading-relaxed text-chocolate/70">
                   {program.description}
                 </p>
-                <div className="mt-6 flex items-end justify-between gap-3 border-t border-white/10 pt-5">
+                <div className="mt-6 flex items-end justify-between gap-3 border-t border-chocolate/10 pt-5">
                   <div>
-                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-cream/50">
+                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-chocolate/50">
                       Precio introductorio
                     </p>
-                    <p className="font-serif text-2xl text-gold">
+                    <p className="font-serif text-2xl text-chocolate">
                       {program.price}
                     </p>
                   </div>
                   <Button
                     href={programHref(program)}
-                    variant={program.featured ? "gold" : "outline"}
+                    variant={program.featured ? "dark" : "outlineLight"}
                     size="md"
                   >
                     {program.cta}

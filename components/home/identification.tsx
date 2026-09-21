@@ -44,11 +44,11 @@ const items: IdentificationItem[] = [
 
 export function Identification() {
   return (
-    <section id="identificacion" className="bg-rose">
+    <section id="identificacion" className="bg-mist">
       <div className="wrap py-16 md:py-24 lg:py-28">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>Identificación</SectionLabel>
+            <SectionLabel className="text-chocolate/70">Identificación</SectionLabel>
             <SectionTitle className="mt-6 text-chocolate">
               ¿Esto es para vos?
             </SectionTitle>
@@ -64,8 +64,8 @@ export function Identification() {
             const Icon = item.icon;
             return (
               <Reveal key={item.text} delay={i * 70} role="listitem">
-                <article className="flex h-full flex-col items-start gap-4 rounded-2xl border border-terracotta/20 bg-cream-bright p-6 transition-all duration-300 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-lg">
-                  <Icon size={26} className="text-terracotta-dark" />
+                <article className="flex h-full flex-col items-start gap-4 rounded-2xl border border-sage/40 bg-almond p-6 transition-all duration-300 hover:-translate-y-1 hover:border-chocolate/25 hover:shadow-lg">
+                  <Icon size={26} className="text-chocolate/70" />
                   <p className="text-lg leading-snug text-chocolate">
                     {item.text}
                   </p>

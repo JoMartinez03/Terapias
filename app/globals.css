@@ -32,6 +32,14 @@
   /* Texto neutro */
   --color-mocha: #6b5240;
   --color-sand: #d8ccb8;
+
+  /* PRUEBA VISUAL — Paleta serena (solo Home) */
+  --color-mist: #edeee9;
+  --color-almond: #e7dad1;
+  --color-blush: #e5c4b9;
+  --color-frost: #c1d2db;
+  --color-sage: #bfcecb;
+  --color-stone: #868a8e;
 }
 
 @layer base {
