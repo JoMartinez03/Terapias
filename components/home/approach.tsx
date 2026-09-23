@@ -27,24 +27,24 @@ const values: ApproachValue[] = [
 
 export function Approach() {
   return (
-    <section id="sobre-mi" className="bg-almond">
+    <section id="sobre-mi" className="bg-surface">
       <div className="wrap grid items-start gap-14 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 lg:py-28">
         <div className="max-w-2xl">
           <Reveal>
-            <SectionLabel className="text-chocolate/70">Por qué yo</SectionLabel>
+            <SectionLabel>Por qué yo</SectionLabel>
           </Reveal>
 
           <Reveal delay={80}>
-            <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+            <h2 className="mt-6 font-serif text-[2.6rem] font-medium leading-[1.05] tracking-tight md:text-[3.1rem] lg:text-[3.9rem]">
               Mi enfoque es diferente{" "}
-              <em className="text-chocolate">
+              <em className="text-rose-deep">
                 porque parte de mi propia historia
               </em>
             </h2>
           </Reveal>
 
           <Reveal delay={160}>
-            <div className="mt-8 space-y-4 leading-relaxed text-chocolate/80">
+            <div className="mt-8 space-y-4 leading-relaxed text-taupe">
               <p>
                 No llegué a estas terapias por casualidad.
               </p>
@@ -60,8 +60,8 @@ export function Approach() {
           </Reveal>
 
           <Reveal delay={220}>
-            <blockquote className="mt-9 border-l-2 border-sage pl-6">
-              <p className="font-serif text-2xl italic leading-snug text-chocolate md:text-3xl">
+            <blockquote className="mt-9 border-l-2 border-rose pl-6">
+              <p className="font-serif text-2xl italic leading-snug text-ink md:text-3xl">
                 El cuerpo no es tu enemigo. Es tu guía. Y yo te ayudo a
                 escucharlo.
               </p>
@@ -69,7 +69,7 @@ export function Approach() {
           </Reveal>
 
           <Reveal delay={280}>
-            <Button href="#contacto" variant="dark" className="mt-9">
+            <Button href="#contacto" variant="primary" className="mt-9">
               Conocé mi historia completa
             </Button>
           </Reveal>
@@ -83,14 +83,14 @@ export function Approach() {
               return (
                 <li
                   key={value.label}
-                  className="flex flex-col gap-3 rounded-2xl border border-sage/40 bg-mist p-6 transition-all duration-300 hover:-translate-y-1 hover:border-chocolate/25 hover:shadow-md"
+                  className="flex flex-col gap-3 rounded-2xl border border-rose/25 bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-rose/70 hover:shadow-md"
                 >
-                  <Icon size={26} className="text-chocolate/70" />
+                  <Icon size={26} className="text-rose-deep" />
                   <div>
-                    <p className="font-serif text-xl text-chocolate">
+                    <p className="font-serif text-xl text-ink">
                       {value.label}
                     </p>
-                    <p className="mt-1 text-sm leading-relaxed text-chocolate/70">
+                    <p className="mt-1 text-sm leading-relaxed text-taupe">
                       {value.note}
                     </p>
                   </div>

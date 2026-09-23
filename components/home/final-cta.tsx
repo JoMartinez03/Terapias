@@ -9,29 +9,29 @@ export function FinalCta() {
   const waPending = isPendingUrl(wa);
 
   return (
-    <section id="contacto" className="relative overflow-hidden bg-mist text-chocolate">
-      {/* Resplandor suave rosado */}
+    <section id="contacto" className="relative overflow-hidden bg-background text-ink">
+      {/* Resplandor suave rosa viejo */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_50%_at_50%_0%,rgba(229,196,185,0.5),transparent)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(55%_50%_at_50%_0%,rgba(201,150,138,0.32),transparent)]"
       />
       <div className="wrap relative py-20 text-center md:py-28">
         <Reveal>
           <div className="mx-auto flex max-w-2xl flex-col items-center">
-            <SectionLabel className="justify-center text-chocolate/70">
+            <SectionLabel className="justify-center">
               Escribime
             </SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
+            <h2 className="mt-6 font-serif text-[2.6rem] font-medium leading-[1.05] tracking-tight md:text-[3.1rem] lg:text-[3.9rem]">
               ¿Sentís que algo en vos{" "}
-              <em className="text-chocolate underline decoration-sage decoration-2 underline-offset-8">
+              <em className="text-rose-deep underline decoration-gold decoration-2 underline-offset-8">
                 necesita moverse?
               </em>
             </h2>
-            <p className="mt-7 text-lg leading-relaxed text-chocolate/70">
+            <p className="mt-7 text-lg leading-relaxed text-taupe">
               El primer paso no tiene que ser perfecto. Solo tiene que ser un
               paso.
             </p>
-            <p className="mt-3 leading-relaxed text-chocolate/70">
+            <p className="mt-3 leading-relaxed text-taupe">
               Escribime y conversamos para entender qué necesitás y cómo puedo
               acompañarte.
             </p>
@@ -40,14 +40,14 @@ export function FinalCta() {
               <Button
                 href={wa}
                 size="lg"
-                variant="dark"
+                variant="primary"
                 external={!waPending}
                 pendingTitle={waPending}
               >
                 <WhatsAppIcon size={20} />
                 Escribime por WhatsApp
               </Button>
-              <Button href="#servicios" variant="outlineLight" size="lg">
+              <Button href="#servicios" variant="outline" size="lg">
                 Ver todos los servicios
               </Button>
             </div>
@@ -56,12 +56,12 @@ export function FinalCta() {
               href={site.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-12 inline-flex items-center gap-2 text-sm text-chocolate/70 transition-colors hover:text-chocolate"
+              className="group mt-12 inline-flex items-center gap-2 text-sm text-taupe transition-colors hover:text-rose-deep"
             >
               <InstagramIcon size={18} />
               <span>
                 Seguime en Instagram{" "}
-                <span className="text-chocolate">{site.instagram.handle}</span>
+                <span className="text-ink">{site.instagram.handle}</span>
               </span>
             </a>
           </div>

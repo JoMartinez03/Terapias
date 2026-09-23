@@ -2,50 +2,35 @@
 
 @theme {
   /* Tipografías */
-  --font-serif: var(--font-cormorant);
+  --font-serif: var(--font-fraunces);
   --font-sans: var(--font-jost);
 
-  /* Marrón chocolate */
-  --color-chocolate: #4a3022;
-  --color-chocolate-dark: #3a2418;
-  --color-chocolate-deep: #2e1a0f;
-  --color-chocolate-ink: #21130a;
+  /* V2 — Rosa viejo + tonos tierra + dorado apagado */
 
-  /* Crema */
-  --color-cream: #f5efe4;
-  --color-cream-soft: #efe7d6;
-  --color-cream-bright: #fbf7ee;
+  /* Fondos y superficies */
+  --color-background: #f7f1ee; /* fondo principal */
+  --color-surface: #ead8d2; /* fondo secundario */
+  --color-card: #f3e4e0; /* tinte rosa para tarjetas */
 
-  /* Rosa empolvado */
-  --color-rose: #f0d8cf;
-  --color-rose-soft: #f5e3dc;
+  /* Rosa viejo (identidad) */
+  --color-rose: #c9968a; /* acentos, bordes, iconografía */
+  --color-rose-deep: #8f5e50; /* acento accesible: labels, enlaces, botones */
+  --color-rose-shadow: #7c5044; /* hover / foco sobre rose-deep */
 
-  /* Terracota */
-  --color-terracotta: #c97d60;
-  --color-terracotta-dark: #a85e42;
+  /* Dorado apagado (solo acento) */
+  --color-gold: #b89a68;
+  --color-gold-bright: #c7ae82;
 
-  /* Dorado cálido */
-  --color-gold: #d4af37;
-  --color-gold-soft: #dcc06a;
-  --color-gold-bright: #e2c25e;
-
-  /* Texto neutro */
-  --color-mocha: #6b5240;
-  --color-sand: #d8ccb8;
-
-  /* PRUEBA VISUAL — Paleta serena (solo Home) */
-  --color-mist: #edeee9;
-  --color-almond: #e7dad1;
-  --color-blush: #e5c4b9;
-  --color-frost: #c1d2db;
-  --color-sage: #bfcecb;
-  --color-stone: #868a8e;
+  /* Texto */
+  --color-ink: #554844; /* texto principal / tierra oscuro */
+  --color-ink-deep: #463a36; /* hover sobre ink */
+  --color-taupe: #796a65; /* texto secundario */
 }
 
 @layer base {
   :root {
-    --background: #f5efe4;
-    --foreground: #4a3022;
+    --background: #f7f1ee;
+    --foreground: #554844;
   }
 
   html {
@@ -65,12 +50,12 @@
   }
 
   ::selection {
-    background-color: var(--color-gold);
-    color: var(--color-chocolate-ink);
+    background-color: var(--color-rose-deep);
+    color: var(--color-background);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-rose-deep);
     outline-offset: 3px;
     border-radius: 2px;
   }

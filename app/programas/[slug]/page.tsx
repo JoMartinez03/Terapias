@@ -33,11 +33,11 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
   if (!program) notFound();
 
   return (
-    <section id="programa" className="bg-cream">
+    <section id="programa" className="bg-background">
       <div className="wrap py-16 md:py-24 lg:py-28">
         <Link
           href="/#programas"
-          className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-mocha transition-colors hover:text-terracotta-dark"
+          className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-taupe transition-colors hover:text-rose-deep"
         >
           <ArrowRightIcon size={18} className="rotate-180" />
           Volver a programas
@@ -45,16 +45,16 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
 
         <div className="mt-10 max-w-2xl">
           <SectionLabel>{program.kind}</SectionLabel>
-          <h1 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-chocolate md:text-5xl">
+          <h1 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-ink md:text-5xl">
             {program.title}
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-chocolate/80">
+          <p className="mt-6 text-lg leading-relaxed text-taupe">
             {program.description}
           </p>
-          <p className="mt-8 font-serif text-3xl text-terracotta-dark">
+          <p className="mt-8 font-serif text-3xl text-rose-deep">
             {program.price}
           </p>
-          <p className="mt-2 text-sm text-mocha">
+          <p className="mt-2 text-sm text-taupe">
             Esta página está en preparación. Muy pronto vas a encontrar acá
             todos los detalles del programa.
           </p>

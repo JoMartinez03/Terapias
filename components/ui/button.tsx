@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "gold" | "outline" | "dark" | "linkGold" | "outlineLight";
+type Variant = "primary" | "outline" | "link";
 
 interface ButtonProps {
   children: ReactNode;
@@ -25,19 +25,16 @@ const sizes: Record<NonNullable<ButtonProps["size"]>, string> = {
 };
 
 const variants: Record<Variant, string> = {
-  gold: "bg-gold text-chocolate-ink hover:bg-gold-bright hover:shadow-lg",
+  primary: "bg-rose-deep text-background hover:bg-rose-shadow hover:shadow-lg",
   outline:
-    "border border-cream/40 text-cream hover:border-gold hover:text-gold",
-  outlineLight:
-    "border border-chocolate/30 text-chocolate hover:border-chocolate hover:bg-chocolate hover:text-cream",
-  dark: "bg-chocolate text-cream hover:bg-chocolate-dark",
-  linkGold: "text-gold hover:text-gold-bright underline-offset-4 hover:underline",
+    "border border-ink/40 text-ink hover:border-rose-deep hover:bg-rose-deep hover:text-background",
+  link: "text-rose-deep underline-offset-4 hover:text-ink hover:underline",
 };
 
 export function Button({
   children,
   href,
-  variant = "gold",
+  variant = "primary",
   size = "md",
   className,
   external = false,

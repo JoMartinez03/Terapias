@@ -40,8 +40,8 @@ export function PhotoPlaceholder({
       className={cn(
         "relative flex aspect-[3/4] w-full items-center justify-center overflow-hidden rounded-2xl",
         tone === "dark"
-          ? "bg-gradient-to-br from-chocolate-dark via-chocolate to-chocolate-deep"
-          : "bg-gradient-to-br from-cream-soft via-cream to-rose",
+          ? "bg-gradient-to-br from-rose-shadow via-rose-deep to-rose"
+          : "bg-gradient-to-br from-surface via-background to-rose/50",
         className,
       )}
     >
@@ -49,7 +49,7 @@ export function PhotoPlaceholder({
       <div
         className={cn(
           "absolute inset-4 rounded-xl border border-dashed",
-          tone === "dark" ? "border-gold/25" : "border-terracotta/30",
+          tone === "dark" ? "border-gold/40" : "border-gold/50",
         )}
         aria-hidden="true"
       />
@@ -57,14 +57,14 @@ export function PhotoPlaceholder({
         <LotusIcon
           size={56}
           className={cn(
-            tone === "dark" ? "text-gold/60" : "text-terracotta/60",
+            tone === "dark" ? "text-gold/80" : "text-rose",
           )}
         />
         <div className="flex flex-col items-center gap-1">
           <span
             className={cn(
               "font-serif text-3xl italic",
-              tone === "dark" ? "text-cream/80" : "text-chocolate/70",
+              tone === "dark" ? "text-background/90" : "text-ink",
             )}
           >
             Laura Sáez
@@ -72,7 +72,7 @@ export function PhotoPlaceholder({
           <span
             className={cn(
               "font-sans text-[0.65rem] font-medium uppercase tracking-[0.3em]",
-              tone === "dark" ? "text-sand" : "text-mocha/70",
+              tone === "dark" ? "text-background/80" : "text-taupe",
             )}
           >
             {label}

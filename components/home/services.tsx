@@ -6,16 +6,16 @@ import { services } from "@/data/services";
 
 export function Services() {
   return (
-    <section id="servicios" className="bg-almond">
+    <section id="servicios" className="bg-surface">
       <div className="wrap py-16 md:py-24 lg:py-28">
         <Reveal>
           <div className="max-w-2xl">
-            <SectionLabel className="text-chocolate/70">Terapias</SectionLabel>
-            <SectionTitle className="mt-6 text-chocolate">
-              Formas de trabajar juntas
+            <SectionLabel>Terapias</SectionLabel>
+            <SectionTitle className="mt-6 text-ink">
+              Formas de acompañarte en tu proceso
             </SectionTitle>
-            <p className="mt-5 text-lg leading-relaxed text-chocolate/80">
-              Sesiones individuales para acompañarte en tu proceso personal.
+            <p className="mt-5 text-lg leading-relaxed text-taupe">
+              Sesiones individuales para acompañar tu proceso personal.
             </p>
           </div>
         </Reveal>
@@ -27,19 +27,19 @@ export function Services() {
               : service.agendaproUrl;
             return (
               <Reveal key={service.slug} delay={i * 70}>
-                <article className="group flex h-full flex-col rounded-2xl border border-sage/40 bg-mist p-7 transition-all duration-300 hover:-translate-y-1 hover:border-chocolate/20 hover:shadow-lg">
-                  <p className="text-xs font-medium uppercase tracking-[0.25em] text-chocolate/70">
+                <article className="group flex h-full flex-col rounded-2xl border border-rose/25 bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-rose/60 hover:shadow-lg">
+                  <p className="text-xs font-medium uppercase tracking-[0.25em] text-taupe">
                     {service.modality}
                   </p>
-                  <h3 className="mt-3 font-serif text-2xl font-medium text-chocolate md:text-3xl">
+                  <h3 className="mt-3 font-serif text-2xl font-medium text-ink md:text-3xl">
                     {service.title}
                   </h3>
-                  <p className="mt-3 flex-1 leading-relaxed text-chocolate/70">
+                  <p className="mt-3 flex-1 leading-relaxed text-taupe">
                     {service.excerpt}
                   </p>
                   <a
                     href={target}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-chocolate/80 transition-colors group-hover:text-chocolate"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-rose-deep transition-colors group-hover:text-ink"
                     title={
                       isPendingUrl(target)
                         ? "Enlace pendiente de confirmación"

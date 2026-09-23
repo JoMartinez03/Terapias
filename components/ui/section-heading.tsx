@@ -17,7 +17,7 @@ export function SectionLabel({
     <p
       className={cn(
         "flex items-center gap-3 font-sans text-xs font-medium uppercase tracking-[0.35em]",
-        tone === "light" ? "text-terracotta-dark" : "text-gold",
+        tone === "light" ? "text-rose-deep" : "text-gold",
         className,
       )}
     >
@@ -37,7 +37,7 @@ export function SectionTitle({ children, className }: SectionTitleProps) {
   return (
     <h2
       className={cn(
-        "font-serif text-4xl leading-[1.08] tracking-tight md:text-5xl lg:text-6xl",
+        "font-serif text-[2.6rem] leading-[1.05] tracking-tight md:text-[3.1rem] lg:text-[3.9rem]",
         className,
       )}
     >

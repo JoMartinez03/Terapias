@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import type { Viewport } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Fraunces, Jost } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#4a3022",
+  themeColor: "#f7f1ee",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -60,17 +60,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={`${cormorant.variable} ${jost.variable}`}
+      className={`${fraunces.variable} ${jost.variable}`}
     >
       <head>
         <Script id="enable-js" strategy="beforeInteractive">
           {`document.documentElement.classList.add("js")`}
         </Script>
       </head>
-      <body className="flex min-h-full flex-col bg-cream text-chocolate">
+      <body className="flex min-h-full flex-col bg-background text-ink">
         <a
           href="#contenido"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:rounded-md focus:bg-gold focus:px-4 focus:py-2 focus:text-chocolate-ink"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:rounded-md focus:bg-rose-deep focus:px-4 focus:py-2 focus:text-background"
         >
           Saltar al contenido
         </a>

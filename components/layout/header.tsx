@@ -19,12 +19,12 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-chocolate">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-background/90 backdrop-blur-md">
       <div className="wrap flex h-16 items-center justify-between gap-6 md:h-20">
         <Link
           href="/"
           onClick={close}
-          className="shrink-0 font-serif text-2xl tracking-wide text-cream transition-colors hover:text-gold"
+          className="shrink-0 font-serif text-2xl tracking-wide text-ink transition-colors hover:text-rose-deep"
         >
           {site.name}
         </Link>
@@ -38,14 +38,14 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-normal tracking-wide text-cream/80 transition-colors hover:text-gold"
+              className="text-sm font-normal tracking-wide text-taupe transition-colors hover:text-rose-deep"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href={ctaLink.href}
-            className="rounded-full bg-gold px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-chocolate-ink transition-colors hover:bg-gold-bright"
+            className="rounded-full bg-rose-deep px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-background transition-colors hover:bg-rose-shadow"
           >
             {ctaLink.label}
           </Link>
@@ -58,7 +58,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
-          className="rounded-md p-1.5 text-cream transition-colors hover:text-gold lg:hidden"
+          className="rounded-md p-1.5 text-ink transition-colors hover:text-rose-deep lg:hidden"
         >
           {open ? <CloseIcon size={26} /> : <MenuIcon size={26} />}
         </button>
@@ -68,7 +68,7 @@ export function Header() {
       <div
         id="mobile-menu"
         className={cn(
-          "overflow-hidden border-t border-white/10 bg-chocolate transition-[max-height] duration-300 lg:hidden",
+          "overflow-hidden border-t border-ink/10 bg-background transition-[max-height] duration-300 lg:hidden",
           open ? "max-h-96" : "max-h-0",
         )}
       >
@@ -81,7 +81,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={close}
-              className="rounded-lg px-3 py-3 text-base text-cream transition-colors hover:bg-white/5 hover:text-gold"
+              className="rounded-lg px-3 py-3 text-base text-taupe transition-colors hover:bg-rose/10 hover:text-rose-deep"
             >
               {link.label}
             </Link>
@@ -89,7 +89,7 @@ export function Header() {
           <Link
             href={ctaLink.href}
             onClick={close}
-            className="mt-3 rounded-full bg-gold px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-chocolate-ink transition-colors hover:bg-gold-bright"
+            className="mt-3 rounded-full bg-rose-deep px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-background transition-colors hover:bg-rose-shadow"
           >
             {ctaLink.label}
           </Link>

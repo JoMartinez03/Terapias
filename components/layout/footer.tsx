@@ -8,21 +8,21 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-chocolate-ink text-cream/80">
+    <footer className="bg-surface text-taupe">
       <div className="wrap grid gap-12 py-16 md:py-20 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         {/* Marca */}
         <div>
           <div className="flex items-center gap-3">
             <LotusIcon size={30} className="text-gold" />
-            <span className="font-serif text-2xl text-cream">{site.name}</span>
+            <span className="font-serif text-2xl text-ink">{site.name}</span>
           </div>
-          <p className="mt-3 font-sans text-xs font-medium uppercase tracking-[0.3em] text-gold">
+          <p className="mt-3 font-sans text-xs font-medium uppercase tracking-[0.3em] text-rose-deep">
             {site.tagline}
           </p>
-          <p className="mt-2 font-serif text-lg italic text-cream/70">
+          <p className="mt-2 font-serif text-lg italic text-ink/80">
             {site.brandLine}
           </p>
-          <p className="mt-6 max-w-xs text-sm leading-relaxed text-cream/50">
+          <p className="mt-6 max-w-xs text-sm leading-relaxed text-taupe/80">
             {site.location}, Argentina. Las terapias y acompañamientos aquí
             descriptos son complementarios y no sustituyen el diagnóstico ni el
             tratamiento médico.
@@ -31,7 +31,7 @@ export function Footer() {
 
         {/* Servicios */}
         <nav aria-label="Servicios">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-cream/60">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-taupe">
             Servicios
           </h2>
           <ul className="mt-5 space-y-3 text-sm">
@@ -39,7 +39,7 @@ export function Footer() {
               <li key={service.slug}>
                 <Link
                   href={service.agendaproUrl || "/#servicios"}
-                  className="transition-colors hover:text-gold"
+                  className="transition-colors hover:text-rose-deep"
                 >
                   {service.title}
                 </Link>
@@ -50,7 +50,7 @@ export function Footer() {
 
         {/* Programas */}
         <nav aria-label="Programas">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-cream/60">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-taupe">
             Programas
           </h2>
           <ul className="mt-5 space-y-3 text-sm">
@@ -58,7 +58,7 @@ export function Footer() {
               <li key={program.slug}>
                 <Link
                   href={programHref(program)}
-                  className="transition-colors hover:text-gold"
+                  className="transition-colors hover:text-rose-deep"
                 >
                   {program.title}
                 </Link>
@@ -69,7 +69,7 @@ export function Footer() {
 
         {/* Contacto y redes */}
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-cream/60">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-taupe">
             Contacto
           </h2>
           <ul className="mt-5 space-y-3 text-sm">
@@ -78,20 +78,20 @@ export function Footer() {
                 href={site.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-gold"
+                className="inline-flex items-center gap-2 transition-colors hover:text-rose-deep"
               >
                 <InstagramIcon size={18} />
                 {site.instagram.handle}
               </Link>
             </li>
-            <li className="text-cream/50">{site.location}</li>
+            <li className="text-taupe/80">{site.location}</li>
           </ul>
         </div>
       </div>
 
       {/* Barra inferior */}
-      <div className="border-t border-white/10">
-        <div className="wrap flex flex-col gap-2 py-6 text-center text-xs text-cream/40 md:flex-row md:items-center md:justify-between md:text-left">
+      <div className="border-t border-ink/10">
+        <div className="wrap flex flex-col gap-2 py-6 text-center text-xs text-taupe/70 md:flex-row md:items-center md:justify-between md:text-left">
           <p>
             © {year} {site.name} · {site.tagline}
           </p>
