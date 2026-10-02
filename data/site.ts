@@ -11,11 +11,15 @@ export const site = {
   // Los que no estén confirmados aún quedan vacíos y los botones
   // se renderizarán con href="#" marcado como pendiente.
   whatsapp: {
-    // PENDIENTE: completar el número (código de país + sin +, espacios ni guiones)
-    phone: "",
-    // Mensaje predefinido para el primer contacto
-    message: "Hola Laura, quiero más información sobre tus terapias.",
+    // Código de país + número, sin +, espacios ni guiones
+    phone: "542604351522",
+    // Solo para mostrar en pantalla
+    display: "+54 260 435-1522",
+    // Mensaje predefinido para el primer contacto general
+    message:
+      "Hola Laura, estuve viendo tu página y me gustaría hacerte una consulta.",
   },
+  email: "contacto@laurabienestarintegral.com",
   agendapro: {
     // PENDIENTE: completar el enlace cuando la agenda esté disponible
     url: "",
@@ -37,11 +41,18 @@ export function isPendingUrl(url: string) {
   return !url || url === "#";
 }
 
-/** Genera el enlace de WhatsApp a partir de la configuración central. */
-export function whatsappUrl(): string {
+/**
+ * Genera el enlace de WhatsApp a partir de la configuración central.
+ * Permite pasar un mensaje propio (por ejemplo, el de cada servicio).
+ */
+export function whatsappUrl(message: string = site.whatsapp.message): string {
   if (!site.whatsapp.phone) {
     return "#";
   }
-  const text = encodeURIComponent(site.whatsapp.message);
-  return `https://wa.me/${site.whatsapp.phone}?text=${text}`;
+  return `https://wa.me/${site.whatsapp.phone}?text=${encodeURIComponent(message)}`;
+}
+
+/** Enlace de correo de Laura. */
+export function mailUrl(): string {
+  return `mailto:${site.email}`;
 }

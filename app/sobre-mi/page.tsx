@@ -1,18 +1,30 @@
+import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { SectionLabel } from "@/components/ui/section-heading";
+import { WhatsAppIcon } from "@/components/ui/icons";
+import { isPendingUrl, whatsappUrl } from "@/data/site";
 
-export function AboutLaura() {
+export const metadata: Metadata = {
+  title: "Sobre mí",
+  description:
+    "Conocé la historia y el enfoque de Laura Sáez, terapeuta integral en Masaje Terapéutico, Reiki y Biodescodificación.",
+};
+
+export default function SobreMiPage() {
+  const wa = whatsappUrl();
+  const waPending = isPendingUrl(wa);
+
   return (
-    <section id="sobre-laura" className="bg-surface">
+    <section id="sobre-mi-pagina" className="bg-background text-ink">
       <div className="wrap grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:py-28">
         <Reveal>
           <div className="mx-auto max-w-sm lg:mx-0">
             <PhotoPlaceholder
               alt="Laura Sáez en su espacio de trabajo, San Rafael, Mendoza"
               label="Fotografía de perfil"
-              tone="light"
+              tone="dark"
             />
           </div>
         </Reveal>
@@ -23,11 +35,11 @@ export function AboutLaura() {
           </Reveal>
 
           <Reveal delay={80}>
-            <h2 className="mt-6 font-serif text-[2.6rem] font-medium leading-[1.05] tracking-tight md:text-[3.1rem] lg:text-[3.9rem]">
+            <h1 className="mt-6 font-serif text-[2.6rem] font-medium leading-[1.05] tracking-tight md:text-[3.1rem] lg:text-[3.9rem]">
               Hola,
               <br />
               soy <em className="text-rose-deep">Laura</em>
-            </h2>
+            </h1>
           </Reveal>
 
           <Reveal delay={160}>
@@ -54,10 +66,22 @@ export function AboutLaura() {
             </p>
           </Reveal>
 
-          <Reveal delay={300}>
-            <Button href="/sobre-mi" variant="primary" className="mt-9">
-              Conocé mi historia
-            </Button>
+          <Reveal delay={280}>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Button
+                href={wa}
+                size="lg"
+                variant="primary"
+                external={!waPending}
+                pendingTitle={waPending}
+              >
+                <WhatsAppIcon size={20} />
+                Escribime por WhatsApp
+              </Button>
+              <Button href="/#servicios" variant="outline" size="lg">
+                Ver servicios
+              </Button>
+            </div>
           </Reveal>
         </div>
       </div>

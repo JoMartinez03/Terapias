@@ -174,6 +174,15 @@ export function InstagramIcon(props: IconProps) {
   );
 }
 
+export function MailIcon(props: IconProps) {
+  return (
+    <StrokeIcon {...props}>
+      <rect x="3" y="5.5" width="18" height="13" rx="2.5" />
+      <path d="m3.8 7 7.1 5.2a1.7 1.7 0 0 0 2.2 0L20.2 7" />
+    </StrokeIcon>
+  );
+}
+
 export function WhatsAppIcon({ size = 24, ...rest }: IconProps) {
   return (
     <svg

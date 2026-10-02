@@ -1,8 +1,13 @@
 import Link from "next/link";
-import { programs, programHref } from "@/data/programs";
-import { services } from "@/data/services";
-import { site } from "@/data/site";
-import { InstagramIcon, LotusIcon } from "@/components/ui/icons";
+import { isProgramAvailable, programs, programLink } from "@/data/programs";
+import { services, serviceHref } from "@/data/services";
+import { mailUrl, site, whatsappUrl } from "@/data/site";
+import {
+  InstagramIcon,
+  LotusIcon,
+  MailIcon,
+  WhatsAppIcon,
+} from "@/components/ui/icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -38,7 +43,7 @@ export function Footer() {
             {services.map((service) => (
               <li key={service.slug}>
                 <Link
-                  href={service.agendaproUrl || "/#servicios"}
+                  href={serviceHref(service)}
                   className="transition-colors hover:text-rose-deep"
                 >
                   {service.title}
@@ -54,16 +59,35 @@ export function Footer() {
             Programas
           </h2>
           <ul className="mt-5 space-y-3 text-sm">
-            {programs.map((program) => (
-              <li key={program.slug}>
-                <Link
-                  href={programHref(program)}
-                  className="transition-colors hover:text-rose-deep"
-                >
-                  {program.title}
-                </Link>
-              </li>
-            ))}
+            {programs.map((program) => {
+              const { href, external } = programLink(program);
+              return (
+                <li key={program.slug}>
+                  {external ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-rose-deep"
+                    >
+                      {program.title}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      className="transition-colors hover:text-rose-deep"
+                    >
+                      {program.title}
+                    </Link>
+                  )}
+                  {!isProgramAvailable(program) && (
+                    <span className="ml-2 text-[0.65rem] uppercase tracking-[0.2em] text-taupe/70">
+                      Próximamente
+                    </span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -74,7 +98,27 @@ export function Footer() {
           </h2>
           <ul className="mt-5 space-y-3 text-sm">
             <li>
-              <Link
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 transition-colors hover:text-rose-deep"
+              >
+                <WhatsAppIcon size={18} />
+                {site.whatsapp.display}
+              </a>
+            </li>
+            <li>
+              <a
+                href={mailUrl()}
+                className="inline-flex items-center gap-2 break-all transition-colors hover:text-rose-deep"
+              >
+                <MailIcon size={18} />
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a
                 href={site.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -82,7 +126,7 @@ export function Footer() {
               >
                 <InstagramIcon size={18} />
                 {site.instagram.handle}
-              </Link>
+              </a>
             </li>
             <li className="text-taupe/80">{site.location}</li>
           </ul>

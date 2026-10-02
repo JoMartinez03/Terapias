@@ -24,7 +24,7 @@ export function Hero() {
 
           <Reveal delay={80}>
             <h1 className="mt-7 font-serif text-[2.9rem] font-semibold leading-[1.04] tracking-tight md:text-[3.5rem] lg:text-[4.5rem]">
-              Sanación integral
+              Bienestar integral
               <br />
               para quienes ya
               <br />

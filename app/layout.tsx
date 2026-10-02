@@ -28,21 +28,22 @@ export const metadata: Metadata = {
     template: "%s | Laura Sáez",
   },
   description:
-    "Terapias integrativas, Reiki, Biodescodificación, Tarot Evolutivo y programas de bienestar con Laura Sáez en San Rafael y online.",
+    "Bienestar integral con Laura Sáez: Biodescodificación, Reiki y Tarot online, y Masajes terapéuticos presenciales en San Rafael, Mendoza. Programas digitales de bienestar.",
   keywords: [
     "Reiki",
     "Biodescodificación",
-    "Tarot evolutivo",
+    "Tarot",
+    "Masaje terapéutico",
     "terapias integrativas",
+    "bienestar integral",
     "San Rafael",
     "Mendoza",
-    "bienestar",
     "Laura Sáez",
   ],
   openGraph: {
     title: "Laura Sáez | Terapias Integrativas en San Rafael",
     description:
-      "Terapias integrativas, Reiki, Biodescodificación, Tarot Evolutivo y programas de bienestar con Laura Sáez en San Rafael y online.",
+      "Bienestar integral con Laura Sáez: Biodescodificación, Reiki y Tarot online, y Masajes terapéuticos presenciales en San Rafael, Mendoza. Programas digitales de bienestar.",
     siteName: "Laura Sáez | Terapias Integrativas",
     locale: "es_AR",
     type: "website",

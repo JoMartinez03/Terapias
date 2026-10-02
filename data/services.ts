@@ -1,60 +1,81 @@
+import { whatsappUrl } from "@/data/site";
+
+export type ServiceModality = "Online" | "Presencial";
+
 export interface Service {
-  title: string;
   slug: string;
-  /** Etiqueta corta que acompaña al título de la card */
-  modality: string;
+  title: string;
+  /** Modalidad única del servicio (los online no son presenciales) */
+  modality: ServiceModality;
+  /** Detalle de la modalidad, ej. dónde se atiende de forma presencial */
+  modalityDetail?: string;
+  /** Descripción breve: se usa en la card de la Home y como introducción */
   excerpt: string;
-  // ─── Campos centralizados para la próxima iteración (aún sin datos) ───
-  duration: string | null;
-  price: string | null;
-  longDescription: string | null;
-  /** PENDIENTE: enlace de AgendaPro cuando esté disponible */
-  agendaproUrl: string;
+  /** PENDIENTE: ampliará Laura con el detalle de cómo es la sesión */
+  description?: string[];
+  /** PENDIENTE: beneficios concretos del servicio */
+  benefits?: string[];
+  /** Mensaje predefinido al consultar por este servicio */
+  whatsappMessage: string;
 }
 
 export const services: Service[] = [
   {
-    title: "Biodescodificación individual",
-    slug: "biodescodificacion-individual",
-    modality: "Online o presencial · San Rafael",
+    slug: "biodescodificacion",
+    title: "Biodescodificación",
+    modality: "Online",
     excerpt:
       "Trabajamos la raíz emocional detrás de tus síntomas físicos, tus bloqueos y tus patrones repetitivos.",
-    duration: null,
-    price: null,
-    longDescription: null,
-    agendaproUrl: "",
+    whatsappMessage:
+      "Hola Laura, me gustaría recibir más información sobre Biodescodificación.",
   },
   {
-    title: "Reiki virtual",
-    slug: "reiki-virtual",
-    modality: "Online · Sesiones virtuales",
+    slug: "reiki",
+    title: "Reiki",
+    modality: "Online",
     excerpt:
       "Un espacio de Reiki y relajación que podés recibir desde la comodidad de tu casa.",
-    duration: null,
-    price: null,
-    longDescription: null,
-    agendaproUrl: "",
+    whatsappMessage:
+      "Hola Laura, me gustaría recibir más información sobre Reiki.",
   },
   {
-    title: "Tarot evolutivo",
-    slug: "tarot-evolutivo",
-    modality: "Online · Sesiones virtuales",
+    slug: "tarot",
+    title: "Tarot",
+    modality: "Online",
     excerpt:
       "Una herramienta de autoconocimiento para explorar vínculos, decisiones y procesos personales.",
-    duration: null,
-    price: null,
-    longDescription: null,
-    agendaproUrl: "",
+    whatsappMessage:
+      "Hola Laura, me gustaría recibir más información sobre Tarot.",
   },
   {
-    title: "Sesiones presenciales",
-    slug: "sesiones-presenciales",
-    modality: "Presencial · San Rafael, Mendoza",
+    slug: "masajes-terapeuticos",
+    title: "Masajes terapéuticos",
+    modality: "Presencial",
+    modalityDetail: "San Rafael, Mendoza",
     excerpt:
-      "Masaje terapéutico, Reiki y Biodescodificación de forma presencial en San Rafael.",
-    duration: null,
-    price: null,
-    longDescription: null,
-    agendaproUrl: "",
+      "Favorece la relajación, regula el sistema nervioso y favorece el bienestar emocional, desde bebés hasta la tercera edad.",
+    whatsappMessage:
+      "Hola Laura, me gustaría recibir más información sobre Masajes Terapéuticos.",
   },
 ];
+
+/** Ruta pública de la página individual de cada servicio. */
+export function serviceHref(service: Service): string {
+  return `/servicios/${service.slug}`;
+}
+
+/** "Online" o "Presencial · San Rafael, Mendoza". */
+export function serviceModalityLabel(service: Service): string {
+  return service.modalityDetail
+    ? `${service.modality} · ${service.modalityDetail}`
+    : service.modality;
+}
+
+/** Enlace de WhatsApp con el mensaje predefinido del servicio. */
+export function serviceWhatsappUrl(service: Service): string {
+  return whatsappUrl(service.whatsappMessage);
+}
+
+export function getService(slug: string): Service | undefined {
+  return services.find((service) => service.slug === slug);
+}

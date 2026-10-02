@@ -69,7 +69,7 @@ export function Approach() {
           </Reveal>
 
           <Reveal delay={280}>
-            <Button href="#contacto" variant="primary" className="mt-9">
+            <Button href="/sobre-mi" variant="primary" className="mt-9">
               Conocé mi historia completa
             </Button>
           </Reveal>
