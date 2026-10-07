@@ -6,10 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionLabel } from "@/components/ui/section-heading";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { RecuperarLaCalma } from "@/components/programas/recuperar-la-calma";
 
 interface ProgramPageProps {
   params: Promise<{ slug: string }>;
 }
+
+/** Programas con landing de venta propia dentro del sitio. */
+const LANDING_SLUG = "recuperar-la-calma";
+
+/** Solo se generan las páginas de los programas reales de data/programs.ts */
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return programs.map((program) => ({ slug: program.slug }));
@@ -21,6 +28,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const program = getProgram(slug);
   if (!program) return {};
+  if (slug === LANDING_SLUG) {
+    return {
+      title: program.title,
+      description: program.description,
+      keywords: [
+        "recuperar la calma",
+        "ruptura",
+        "programa de bienestar",
+        "Laura Sáez",
+        "San Rafael",
+        "Mendoza",
+      ],
+    };
+  }
   return {
     title: program.title,
     description: program.description,
@@ -28,9 +49,9 @@ export async function generateMetadata({
 }
 
 /**
- * Ruta heredada de una versión anterior: los programas ya no tienen páginas
- * de detalle propias, la compra se hace en Hotmart. Se conserva para no romper
- * enlaces antiguos y muestra el estado real del programa (sin precios).
+ * Programas con landing propia (slug LANDING_SLUG) muestran esa landing.
+ * El resto conserva la página de estado: sin precios y sin compra activa
+ * hasta que el programa se lance.
  */
 export default async function ProgramPage({ params }: ProgramPageProps) {
   const { slug } = await params;
@@ -38,12 +59,14 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
 
   if (!program) notFound();
 
+  if (slug === LANDING_SLUG) {
+    return <RecuperarLaCalma />;
+  }
+
   const cta = programCta(program);
   const purchaseNote = cta.href
-    ? "Este programa se compra directamente en Hotmart."
-    : cta.pending
-      ? "El link de compra de este programa está en preparación."
-      : "Este programa se lanza muy pronto.";
+    ? "Conocé todos los detalles del programa y empezá desde su propia página."
+    : "Este programa se lanza muy pronto.";
 
   return (
     <section id="programa" className="bg-background">

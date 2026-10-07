@@ -18,6 +18,23 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  /** CTA "Escribime": externo (WhatsApp) o interno según la config central. */
+  const renderCta = (className: string) =>
+    ctaLink.external ? (
+      <a
+        href={ctaLink.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {ctaLink.label}
+      </a>
+    ) : (
+      <Link href={ctaLink.href} className={className}>
+        {ctaLink.label}
+      </Link>
+    );
+
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-background/90 backdrop-blur-md">
       <div className="wrap flex h-16 items-center justify-between gap-6 md:h-20">
@@ -43,12 +60,9 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href={ctaLink.href}
-            className="rounded-full bg-rose-deep px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-background transition-colors hover:bg-rose-shadow"
-          >
-            {ctaLink.label}
-          </Link>
+          {renderCta(
+            "rounded-full bg-rose-deep px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-background transition-colors hover:bg-rose-shadow",
+          )}
         </nav>
 
         {/* Botón menú móvil */}
@@ -86,13 +100,9 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href={ctaLink.href}
-            onClick={close}
-            className="mt-3 rounded-full bg-rose-deep px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-background transition-colors hover:bg-rose-shadow"
-          >
-            {ctaLink.label}
-          </Link>
+          {renderCta(
+            "mt-3 rounded-full bg-rose-deep px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.18em] text-background transition-colors hover:bg-rose-shadow",
+          )}
         </nav>
       </div>
     </header>

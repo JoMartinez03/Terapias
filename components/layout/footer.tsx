@@ -28,16 +28,18 @@ export function Footer() {
             {site.brandLine}
           </p>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-taupe/80">
-            {site.location}, Argentina. Las terapias y acompañamientos aquí
-            descriptos son complementarios y no sustituyen el diagnóstico ni el
-            tratamiento médico.
+            {site.location}, Argentina.
+          </p>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-taupe/80">
+            Las terapias y acompañamientos aquí descriptos son complementarios y
+            no sustituyen el diagnóstico ni el tratamiento médico.
           </p>
         </div>
 
-        {/* Servicios */}
-        <nav aria-label="Servicios">
+        {/* Terapias */}
+        <nav aria-label="Terapias">
           <h2 className="text-xs font-semibold uppercase tracking-[0.3em] text-taupe">
-            Servicios
+            Terapias
           </h2>
           <ul className="mt-5 space-y-3 text-sm">
             {services.map((service) => (
@@ -61,6 +63,19 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             {programs.map((program) => {
               const { href, external } = programLink(program);
+              const forthcoming = !isProgramAvailable(program);
+
+              if (!href) {
+                return (
+                  <li key={program.slug}>
+                    <span className="text-taupe/90">{program.title}</span>
+                    <span className="ml-2 text-[0.65rem] uppercase tracking-[0.2em] text-taupe/70">
+                      Próximamente
+                    </span>
+                  </li>
+                );
+              }
+
               return (
                 <li key={program.slug}>
                   {external ? (
@@ -80,7 +95,7 @@ export function Footer() {
                       {program.title}
                     </Link>
                   )}
-                  {!isProgramAvailable(program) && (
+                  {forthcoming && (
                     <span className="ml-2 text-[0.65rem] uppercase tracking-[0.2em] text-taupe/70">
                       Próximamente
                     </span>

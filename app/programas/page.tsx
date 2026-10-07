@@ -32,8 +32,9 @@ export default function ProgramasPage() {
             Empezá tu proceso desde donde estés
           </SectionTitle>
           <p className="mt-5 text-lg leading-relaxed text-taupe">
-            Los programas disponibles se compran directamente en Hotmart. Los que
-            están marcados como Próximamente todavía no tienen link de compra.
+            Cada programa disponible tiene su propia página, con toda la
+            información para empezar. Los que están marcados como Próximamente
+            todavía no tienen link de compra.
           </p>
         </div>
 

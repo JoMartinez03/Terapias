@@ -18,7 +18,7 @@ interface ServicePageProps {
   params: Promise<{ slug: string }>;
 }
 
-/** Solo se generan las páginas de los servicios reales de data/services.ts */
+/** Solo se generan las páginas de las terapias reales de data/services.ts */
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -34,6 +34,13 @@ export async function generateMetadata({
   return {
     title: service.title,
     description: service.excerpt,
+    keywords: [
+      service.title,
+      "terapias integrativas",
+      "San Rafael",
+      "Mendoza",
+      "Laura Sáez",
+    ],
   };
 }
 
@@ -57,7 +64,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-taupe transition-colors hover:text-rose-deep"
             >
               <ArrowRightIcon size={18} className="rotate-180" />
-              Volver a servicios
+              Volver a terapias
             </Link>
           </Reveal>
 
@@ -78,37 +85,57 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </p>
             </Reveal>
 
-            {service.description && service.description.length > 0 && (
-              <Reveal delay={240}>
-                <div className="mt-6 space-y-4 leading-relaxed text-taupe">
-                  {service.description.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-              </Reveal>
-            )}
+            {service.sections.map((section) => (
+              <div key={section.heading} className="mt-12">
+                <Reveal>
+                  <h2 className="font-serif text-2xl font-medium leading-snug text-ink md:text-3xl">
+                    {section.heading}
+                  </h2>
+                </Reveal>
 
-            {service.benefits && service.benefits.length > 0 && (
-              <Reveal delay={280}>
-                <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-                  {service.benefits.map((benefit) => (
-                    <li
-                      key={benefit}
-                      className="flex gap-3 rounded-2xl border border-rose/25 bg-surface p-6 text-ink"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="mt-2 h-px w-5 shrink-0 bg-rose"
-                      />
-                      <span className="leading-relaxed">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            )}
+                {section.paragraphs && section.paragraphs.length > 0 && (
+                  <Reveal delay={60}>
+                    <div className="mt-5 space-y-4 leading-relaxed text-taupe">
+                      {section.paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </Reveal>
+                )}
 
-            <Reveal delay={320}>
-              <div className="mt-12 flex flex-wrap items-center gap-4">
+                {section.list && section.list.length > 0 && (
+                  <Reveal delay={100}>
+                    <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+                      {section.list.map((item) => (
+                        <li
+                          key={item}
+                          className="flex gap-3 rounded-2xl border border-rose/25 bg-surface p-6 text-ink"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="mt-2 h-px w-5 shrink-0 bg-rose"
+                          />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                )}
+
+                {section.closing && section.closing.length > 0 && (
+                  <Reveal delay={140}>
+                    <div className="mt-6 space-y-4 leading-relaxed text-taupe">
+                      {section.closing.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </Reveal>
+                )}
+              </div>
+            ))}
+
+            <Reveal delay={200}>
+              <div className="mt-14 flex flex-wrap items-center gap-4">
                 <Button
                   href={wa}
                   size="lg"
@@ -128,14 +155,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      {/* Otros servicios */}
+      {/* Otras terapias */}
       <section id="otros-servicios" className="bg-surface text-ink">
         <div className="wrap py-16 md:py-24 lg:py-28">
           <Reveal>
             <div className="max-w-2xl">
               <SectionLabel>También podés consultar por</SectionLabel>
               <h2 className="mt-6 font-serif text-[2.6rem] leading-[1.05] tracking-tight md:text-[3.1rem]">
-                Otros servicios
+                Otras terapias
               </h2>
             </div>
           </Reveal>

@@ -16,7 +16,6 @@ interface ApproachValue {
   note: string;
 }
 
-// Contenido provisional: se editará cuando Laura comparta su historia definitiva.
 const values: ApproachValue[] = [
   { icon: HeartIcon, label: "Amor consciente", note: "Presencia que sostiene sin juzgar." },
   { icon: LeafIcon, label: "Empatía", note: "Acompañarte desde tu propia verdad." },
@@ -70,7 +69,7 @@ export function Approach() {
 
           <Reveal delay={280}>
             <Button href="/sobre-mi" variant="primary" className="mt-9">
-              Conocé mi historia completa
+              Conocé mi historia
             </Button>
           </Reveal>
         </div>

@@ -22,7 +22,7 @@ const items: IdentificationItem[] = [
   },
   {
     icon: TearIcon,
-    text: "Sentís que una emoción nunca terminó de cerrarse.",
+    text: "Tenés una herida que nunca terminó de cerrarse.",
   },
   {
     icon: LoopIcon,

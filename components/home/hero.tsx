@@ -1,10 +1,10 @@
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
-import { isPendingUrl, site } from "@/data/site";
+import { whatsappUrl } from "@/data/site";
 
 export function Hero() {
-  const agendaHref = isPendingUrl(site.agendapro.url) ? "#" : site.agendapro.url;
+  const wa = whatsappUrl();
 
   return (
     <section id="inicio" className="relative overflow-hidden bg-background text-ink">
@@ -16,9 +16,9 @@ export function Hero() {
       <div className="wrap relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-28">
         <div className="max-w-2xl">
           <Reveal>
-            <p className="flex items-center gap-3 font-sans text-xs font-medium uppercase tracking-[0.35em] text-taupe">
+            <p className="flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-xs font-medium uppercase tracking-[0.28em] text-taupe md:tracking-[0.35em]">
               <span className="h-px w-8 bg-ink/40" aria-hidden="true" />
-              Terapias Integrativas · San Rafael, Mendoza
+              Terapias Integrativas · San Rafael, Mendoza · Online a todo el país
             </p>
           </Reveal>
 
@@ -39,23 +39,18 @@ export function Hero() {
 
           <Reveal delay={160}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-taupe">
-              Acompaño a personas con dolor físico, emociones bloqueadas o
-              bloqueos vitales a reconectar con su bienestar — desde el cuerpo,
-              la mente y la energía.
+              Acompaño a personas con dolores o síntomas físicos o emocionales,
+              o que sienten un desequilibrio en sus vidas, a reconectar con su
+              bienestar — desde el cuerpo, la mente y la energía.
             </p>
           </Reveal>
 
           <Reveal delay={240}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button href="#servicios" size="lg" variant="primary">
-                Conocé cómo puedo acompañarte
+                Cómo puedo acompañarte
               </Button>
-              <Button
-                href={agendaHref}
-                variant="outline"
-                size="lg"
-                pendingTitle={isPendingUrl(agendaHref)}
-              >
+              <Button href={wa} variant="outline" size="lg" external>
                 Reservar sesión
               </Button>
             </div>

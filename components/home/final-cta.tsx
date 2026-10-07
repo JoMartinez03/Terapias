@@ -48,7 +48,7 @@ export function FinalCta() {
                 Escribime por WhatsApp
               </Button>
               <Button href="#servicios" variant="outline" size="lg">
-                Ver todos los servicios
+                Ver todas las terapias
               </Button>
             </div>
 
