@@ -106,7 +106,7 @@ export const services: Service[] = [
   {
     slug: "tarot",
     title: "Tarot Evolutivo",
-    modality: "Sesiones virtuales o presencial en San Rafael",
+    modality: "Sesiones virtuales o presenciales en San Rafael",
     excerpt:
       "Una herramienta de autoconocimiento para iluminar lo que está pasando en tu vida — vínculos, decisiones y procesos personales.",
     sections: [
