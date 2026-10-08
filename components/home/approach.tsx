@@ -1,6 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
 import { Reveal } from "@/components/ui/reveal";
-import { Button } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/section-heading";
 import {
   CircleHeartIcon,
@@ -27,7 +26,7 @@ const values: ApproachValue[] = [
 export function Approach() {
   return (
     <section id="sobre-mi" className="bg-surface">
-      <div className="wrap grid items-start gap-14 py-16 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 lg:py-28">
+      <div className="wrap grid items-start gap-14 pt-16 pb-12 md:pt-24 md:pb-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 lg:pt-28 lg:pb-18">
         <div className="max-w-2xl">
           <Reveal>
             <SectionLabel>Por qué yo</SectionLabel>
@@ -65,12 +64,6 @@ export function Approach() {
                 escucharlo.
               </p>
             </blockquote>
-          </Reveal>
-
-          <Reveal delay={280}>
-            <Button href="/sobre-mi" variant="primary" className="mt-9">
-              Conocé mi historia
-            </Button>
           </Reveal>
         </div>
 

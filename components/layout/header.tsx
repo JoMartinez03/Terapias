@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 import { ctaLink, navLinks, site } from "@/data/site";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
+import { BrandMark } from "@/components/ui/brand-mark";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -41,8 +42,9 @@ export function Header() {
         <Link
           href="/"
           onClick={close}
-          className="shrink-0 font-serif text-2xl tracking-wide text-ink transition-colors hover:text-rose-deep"
+          className="flex shrink-0 items-center gap-3 font-serif text-2xl tracking-wide text-ink transition-colors hover:text-rose-deep"
         >
+          <BrandMark className="h-9 md:h-10" />
           {site.name}
         </Link>
 

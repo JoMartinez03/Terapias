@@ -57,7 +57,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   return (
     <>
       <section id="servicio" className="bg-background text-ink">
-        <div className="wrap py-16 md:py-24 lg:py-28">
+        <div className="wrap pt-16 pb-8 md:pt-24 md:pb-10 lg:pt-28 lg:pb-12">
           <Reveal>
             <Link
               href="/#servicios"
@@ -146,9 +146,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <WhatsAppIcon size={20} />
                   Consultar por WhatsApp
                 </Button>
-                <Button href="/#contacto" variant="outline" size="lg">
-                  Escribime
-                </Button>
               </div>
             </Reveal>
           </div>
@@ -156,8 +153,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       </section>
 
       {/* Otras terapias */}
-      <section id="otros-servicios" className="bg-surface text-ink">
-        <div className="wrap py-16 md:py-24 lg:py-28">
+      <section id="otros-servicios" className="bg-background text-ink">
+        <div className="wrap pt-10 pb-16 md:pt-12 md:pb-24 lg:pt-14 lg:pb-28">
           <Reveal>
             <div className="max-w-2xl">
               <SectionLabel>También podés consultar por</SectionLabel>
@@ -172,7 +169,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <Reveal key={item.slug} delay={i * 70} className="h-full">
                 <Link
                   href={serviceHref(item)}
-                  className="group flex h-full flex-col rounded-2xl border border-rose/25 bg-background p-7 transition-all duration-300 hover:-translate-y-1 hover:border-rose/60 hover:shadow-lg"
+                  className="group flex h-full flex-col rounded-2xl border border-rose/25 bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-rose/60 hover:shadow-lg"
                 >
                   <p className="text-xs font-medium uppercase tracking-[0.25em] text-taupe">
                     {serviceModalityLabel(item)}

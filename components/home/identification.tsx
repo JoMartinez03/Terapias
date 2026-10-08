@@ -48,7 +48,7 @@ export function Identification() {
       <div className="wrap py-16 md:py-24 lg:py-28">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
-            <SectionLabel>Identificación</SectionLabel>
+            <SectionLabel className="justify-center">Identificación</SectionLabel>
             <SectionTitle className="mt-6 text-ink">
               ¿Esto es para vos?
             </SectionTitle>

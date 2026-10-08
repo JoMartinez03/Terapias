@@ -4,10 +4,10 @@ import { services, serviceHref } from "@/data/services";
 import { mailUrl, site, whatsappUrl } from "@/data/site";
 import {
   InstagramIcon,
-  LotusIcon,
   MailIcon,
   WhatsAppIcon,
 } from "@/components/ui/icons";
+import { BrandMark } from "@/components/ui/brand-mark";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -18,7 +18,7 @@ export function Footer() {
         {/* Marca */}
         <div>
           <div className="flex items-center gap-3">
-            <LotusIcon size={30} className="text-gold" />
+            <BrandMark className="h-10" />
             <span className="font-serif text-2xl text-ink">{site.name}</span>
           </div>
           <p className="mt-3 font-sans text-xs font-medium uppercase tracking-[0.3em] text-rose-deep">
