@@ -1,21 +1,14 @@
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { BrandLogo } from "@/components/ui/brand-logo";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { SectionLabel } from "@/components/ui/section-heading";
 
 export function AboutLaura() {
   return (
     <section id="sobre-laura" className="bg-surface">
-      <div className="wrap py-16 md:py-24 lg:py-28">
-        {/* Orden de presentación pedido por Laura:
-            Logo → Sobre mí → Foto → Hola, soy Laura → contenido */}
+      <div className="wrap pt-10 pb-16 md:pt-14 md:pb-24 lg:pt-16 lg:pb-28">
         <Reveal>
-          <BrandLogo className="mx-auto w-48 md:w-60" />
-        </Reveal>
-
-        <Reveal delay={80}>
-          <SectionLabel className="mt-12 justify-center">Sobre mí</SectionLabel>
+          <SectionLabel className="justify-center">Sobre mí</SectionLabel>
         </Reveal>
 
         <div className="mt-12 grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">

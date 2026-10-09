@@ -570,7 +570,7 @@ export function RecuperarLaCalma() {
 
       {/* ─── 11 · URGENCIA + CTA FINAL ────────────────────────── */}
       <section id="calma-urgencia" className="bg-background text-ink">
-        <div className="wrap py-16 md:py-24 lg:py-28">
+        <div className="wrap pt-16 pb-8 md:pt-24 md:pb-10 lg:pt-28 lg:pb-12">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <h2 className="font-serif text-[2.4rem] font-medium leading-[1.05] tracking-tight md:text-[2.9rem]">
@@ -615,8 +615,8 @@ export function RecuperarLaCalma() {
       </section>
 
       {/* ─── 12 · PREGUNTAS FRECUENTES ────────────────────────── */}
-      <section id="calma-faq" className="bg-surface text-ink">
-        <div className="wrap py-16 md:py-24 lg:py-28">
+      <section id="calma-faq" className="bg-background text-ink">
+        <div className="wrap pt-10 pb-16 md:pt-14 md:pb-24 lg:pt-16 lg:pb-28">
           <div className="mx-auto max-w-3xl">
             <Reveal>
               <SectionLabel className="justify-center">
@@ -627,7 +627,7 @@ export function RecuperarLaCalma() {
             <div className="mt-10 space-y-4">
               {faqs.map((faq, i) => (
                 <Reveal key={faq.question} delay={i * 60}>
-                  <details className="group rounded-2xl border border-rose/30 bg-background p-6 transition-colors hover:border-rose/60">
+                  <details className="group rounded-2xl border border-rose/30 bg-surface p-6 transition-colors hover:border-rose/60">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-lg text-ink md:text-xl [&::-webkit-details-marker]:hidden">
                       {faq.question}
                       <span
