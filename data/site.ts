@@ -44,6 +44,7 @@ export function mailUrl(): string {
 }
 
 export const navLinks = [
+  { label: "Inicio", href: "/" },
   { label: "Terapias", href: "/#servicios" },
   { label: "Programas", href: "/#programas" },
   { label: "Sobre mí", href: "/sobre-mi" },

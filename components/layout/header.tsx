@@ -10,6 +10,7 @@ import { BrandMark } from "@/components/ui/brand-mark";
 
 /** Sección de inicio que identifica a cada link del nav. */
 const sectionByHref: Record<string, string> = {
+  "/": "inicio",
   "/#servicios": "servicios",
   "/#programas": "programas",
   "/sobre-mi": "sobre-mi",

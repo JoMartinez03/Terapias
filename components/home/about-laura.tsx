@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { SectionLabel } from "@/components/ui/section-heading";
 
 export function AboutLaura() {
@@ -14,11 +14,15 @@ export function AboutLaura() {
         <div className="mt-12 grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <Reveal delay={120}>
             <div className="mx-auto max-w-sm lg:mx-0">
-              <PhotoPlaceholder
-                alt="Laura Sáez en su espacio de trabajo, San Rafael, Mendoza"
-                label="Fotografía de perfil"
-                tone="light"
-              />
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/laura-principal.jpg"
+                  alt="Laura Sáez en su espacio de trabajo, San Rafael, Mendoza"
+                  fill
+                  sizes="(min-width: 1024px) 24rem, calc(100vw - 3rem)"
+                  className="object-cover object-[center_20%]"
+                />
+              </div>
             </div>
           </Reveal>
 
