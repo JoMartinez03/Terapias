@@ -16,7 +16,7 @@ export function AboutLaura() {
             <div className="mx-auto max-w-sm lg:mx-0">
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
                 <Image
-                  src="/images/laura-principal.jpg"
+                  src="/images/laura-sobre-mi.jpg"
                   alt="Laura Sáez en su espacio de trabajo, San Rafael, Mendoza"
                   fill
                   sizes="(min-width: 1024px) 24rem, calc(100vw - 3rem)"

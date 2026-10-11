@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/ui/brand-logo";
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { SectionLabel } from "@/components/ui/section-heading";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { isPendingUrl, whatsappUrl } from "@/data/site";
@@ -23,11 +23,15 @@ export default function SobreMiPage() {
         <Reveal>
           <div className="mx-auto flex max-w-sm flex-col gap-10 lg:mx-0">
             <BrandLogo className="mx-auto w-40 md:w-48 lg:mx-0" />
-            <PhotoPlaceholder
-              alt="Laura Sáez en su espacio de trabajo, San Rafael, Mendoza"
-              label="Fotografía de perfil"
-              tone="dark"
-            />
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/laura-principal.jpg"
+                alt="Laura Sáez en su espacio de trabajo, San Rafael, Mendoza"
+                fill
+                sizes="(min-width: 1024px) 24rem, calc(100vw - 3rem)"
+                className="object-cover object-[center_20%]"
+              />
+            </div>
           </div>
         </Reveal>
 
