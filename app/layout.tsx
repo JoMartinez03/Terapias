@@ -5,6 +5,8 @@ import { Fraunces, Jost } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { MetaPixelScript } from "@/components/analytics/meta-pixel-script";
+import { MetaPixelRouteTracker } from "@/components/analytics/meta-pixel-route-tracker";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -22,7 +24,6 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  // PENDIENTE: definir el dominio definitivo (metadataBase para redes sociales)
   title: {
     default: "Laura Sáez | Terapias Integrativas en San Rafael",
     template: "%s | Laura Sáez",
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Script id="enable-js" strategy="beforeInteractive">
           {`document.documentElement.classList.add("js")`}
         </Script>
+        <MetaPixelScript />
       </head>
       <body className="flex min-h-full flex-col bg-background text-ink">
         <a
@@ -90,6 +92,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <MetaPixelRouteTracker />
       </body>
     </html>
   );
